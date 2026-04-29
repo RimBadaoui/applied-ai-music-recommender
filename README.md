@@ -77,45 +77,35 @@ PipelineResult → printed to stdout
 
 ### 1. Clone / unzip the project
 
-```bash
-cd music_recommender_ai
-```
-
 ### 2. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-`requirements.txt` contains:
-```
-anthropic>=0.97.0
-numpy>=1.24.0
-```
-
-### 3. Set your Anthropic API key
+### 3. Set your Gemini API key
 
 ```bash
-export ANTHROPIC_API_KEY="sk-ant-..."
+set GEMINI_API_KEY=YOUR_KEY
 ```
 
 ### 4. Run the tests (no API key needed)
 
 ```bash
-python tests/test_pipeline.py
+python test_pipeline.py
 # Expected: Ran 26 tests in ~0.01s — OK
 ```
 
 ### 5. Run in demo mode (5 preset queries)
 
 ```bash
-python src/main.py
+python main.py --interactive
 ```
 
 ### 6. Run a single query
 
 ```bash
-python src/main.py --query "something mellow and jazzy for a Sunday morning"
+python main.py --query "something mellow and jazzy for a Sunday morning"
 ```
 
 ### 7. Run interactively
@@ -127,7 +117,7 @@ python src/main.py --interactive
 ### 8. Enable debug logging to console
 
 ```bash
-python src/main.py --debug --query "intense workout music"
+python main.py --debug --query "intense workout music"
 ```
 
 Full structured logs always go to `logs/recommender.log`.
